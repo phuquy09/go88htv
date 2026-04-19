@@ -252,7 +252,7 @@
 
         
 
-        .md5-text { font-family: 'Share Tech Mono';
+        .sha-text { font-family: 'Share Tech Mono';
 
             color: #00ffff; font-size: 11px; margin-top: 5px; opacity: 0.8; }
 
@@ -810,11 +810,11 @@ id="game-title">TÊN GAME</div>
 
             <div class="status-text" id="game-status">> SẴN SÀNG</div>
 
-            <div id="md5-display" style="display: none; position: absolute; top: 30px; left: 50%; transform: translateX(-50%); text-align:center; z-index: 5;">
+            <div id="sha-display" style="display: none; position: absolute; top: 30px; left: 50%; transform: translateX(-50%); text-align:center; z-index: 5;">
 
-                <span style="color:#aaa; font-size:10px;">Chuỗi MD5:</span><br>
+                <span style="color:#aaa; font-size:10px;">Chuỗi SHA:</span><br>
 
-                <span class="md5-text" id="md5-hash"></span>
+                <span class="sha-text" id="sha-hash"></span>
 
             </div>
 
@@ -1368,7 +1368,7 @@ font-weight:bold; font-size:18px;">60</span>s</p>
 
     
 
-    function generateMD5() { return Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15) + "a8f";
+    function generateSHA() { return Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15) + "a8f";
 
     }
 
@@ -1420,7 +1420,7 @@ font-weight:bold; font-size:18px;">60</span>s</p>
 
         document.getElementById('gooey-wrapper').style.display = 'none'; document.getElementById('chromeorb-container').style.display = 'none';
 
-        document.getElementById('orb-text-container').style.display = 'none'; document.getElementById('btn-force-open').style.display = 'none'; document.getElementById('md5-display').style.display = 'none';
+        document.getElementById('orb-text-container').style.display = 'none'; document.getElementById('btn-force-open').style.display = 'none'; document.getElementById('sha-display').style.display = 'none';
 
         document.getElementById('btn-confirm').innerText = "PHÁT LỆNH";
 
@@ -1442,7 +1442,7 @@ font-weight:bold; font-size:18px;">60</span>s</p>
 
             resetCup(); document.getElementById('dia-inner').innerHTML = '';
 
-            if(g==='taixiu') { document.getElementById('md5-display').style.display = 'block'; document.getElementById('md5-hash').innerText = generateMD5();
+            if(g==='taixiu') { document.getElementById('sha-display').style.display = 'block'; document.getElementById('sha-hash').innerText = generateSHA();
 
             }
 
