@@ -258,6 +258,8 @@
 
 
 
+        /* NẶN BÁT CÓ ĐĨA VÀ CHỈNH LẠI Z-INDEX */
+
         .nanbat-container { position: relative;
 
             width: 250px; height: 250px; margin-top: 20px; }
@@ -276,6 +278,8 @@
 
         
 
+        /* CLASS CŨ CHO XÓC ĐĨA/BẦU CUA */
+
         .dice-result { width: 40px;
 
             height: 40px; background: white; border-radius: 5px; display: flex; justify-content: center; align-items: center; font-weight: bold; color: black; font-size: 22px;
@@ -283,6 +287,8 @@
             box-shadow: inset 0 0 5px rgba(0,0,0,0.5); }
 
         
+
+        /* CLASS MỚI CHO SÚC XẮC 3D TÀI XỈU Y NHƯ THẬT */
 
         .dice-face { width: 40px;
 
@@ -311,6 +317,8 @@
         }
 
 
+
+        /* BACCARAT */
 
         .baccarat-container { display: none;
 
@@ -386,6 +394,8 @@
 
         
 
+        /* RADAR ĐIỂM ALPHA */
+
         .radar-container { position: relative;
 
             width: 200px; height: 200px; border-radius: 50%; background: radial-gradient(circle, rgba(0,255,255,0.1) 0%, rgba(0,255,255,0.05) 80%, var(--cyan-neon) 100%); border: 2px solid var(--cyan-neon); margin-top: 30px;
@@ -428,6 +438,8 @@
 
 
 
+        /* THỦY NGÂN CHROME ORB CẢI TIẾN */
+
         .gooey-wrapper { width: 100%;
 
             height: 100%; display: flex; justify-content: center; align-items: center; position: relative; filter: url('#gooey');
@@ -465,6 +477,8 @@
         }
 
 
+
+        /* BẢNG ĐIỀU KHIỂN */
 
         .controls { background: #000;
 
@@ -526,19 +540,25 @@
 
 
 
-        @keyframes sweep { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        @keyframes sweep { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg);
 
-        @keyframes spin { 100% { transform: rotate(360deg); } }
+        } }
+
+        @keyframes spin { 100% { transform: rotate(360deg);
+
+        } }
 
         @keyframes vibrate { 0% { transform: translate(0,0);
 
-            } 20% { transform: translate(-2px, 2px); } 40% { transform: translate(-2px, -2px); } 60% { transform: translate(2px, 2px);
+        } 20% { transform: translate(-2px, 2px); } 40% { transform: translate(-2px, -2px); } 60% { transform: translate(2px, 2px);
 
-            } 80% { transform: translate(2px, -2px); } 100% { transform: translate(0,0);
+        } 80% { transform: translate(2px, -2px); } 100% { transform: translate(0,0);
 
         } }
 
 
+
+        /* Swal Custom Input */
 
         .swal2-input.dark-input { background: #222 !important;
 
@@ -550,17 +570,17 @@
 
         
 
+        /* ---------------------------------------------------- */
+
+        /* THÊM MỚI CSS: CHỨNG CHỈ, MINH BẠCH VÀ NỨT MÀN HÌNH */
+
+        /* ---------------------------------------------------- */
+
         .cert-badge { position: absolute;
 
-            top: 15px; left: 15px; width: 45px; height: 45px; cursor: grab; z-index: 100; filter: drop-shadow(0 0 5px var(--gold-mid));
-
-            background-color: transparent; border-radius: 50%;
+            top: 15px; left: 15px; width: 35px; height: 35px; cursor: pointer; z-index: 100; filter: drop-shadow(0 0 5px var(--gold-mid));
 
         }
-
-        .cert-badge:active { cursor: grabbing; }
-
-
 
         .audit-overlay { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
 
@@ -590,9 +610,9 @@
 
         @keyframes heavyShake { 0% { transform: translate(2px, 2px) rotate(0deg);
 
-            } 25% { transform: translate(-2px, -2px) rotate(1deg); } 50% { transform: translate(3px, -1px) rotate(-1deg);
+        } 25% { transform: translate(-2px, -2px) rotate(1deg); } 50% { transform: translate(3px, -1px) rotate(-1deg);
 
-            } 75% { transform: translate(-1px, 2px) rotate(0deg); } 100% { transform: translate(2px, 2px) rotate(0deg);
+        } 75% { transform: translate(-1px, 2px) rotate(0deg); } 100% { transform: translate(2px, 2px) rotate(0deg);
 
         } }
 
@@ -608,7 +628,7 @@
 
         @keyframes crackPop { 0% { transform: scale(1.2); opacity: 1;
 
-            } 80% { opacity: 1; } 100% { transform: scale(1); opacity: 0;
+        } 80% { opacity: 1; } 100% { transform: scale(1); opacity: 0;
 
         } }
 
@@ -622,7 +642,7 @@
 
 <div class="app-wrapper">
 
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/PAGCOR_Logo.svg/1024px-PAGCOR_Logo.svg.png" class="cert-badge" id="cert-badge-img" title="Chứng chỉ PAGCOR">
+    <img src="logo.png" class="cert-badge" id="cert-badge-img" title="Chứng chỉ PAGCOR">
 
     
 
@@ -638,7 +658,9 @@
 
 
 
-    <svg style="visibility: hidden; position: absolute;" width="0" height="0" xmlns="http://www.w3.org/2000/svg" version="1.1">
+    <svg style="visibility: hidden; position: absolute;"
+
+        width="0" height="0" xmlns="http://www.w3.org/2000/svg" version="1.1">
 
         <defs><filter id="gooey"><feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur" /><feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="gooey" /><feBlend in="SourceGraphic" in2="gooey" /></filter></defs>
 
@@ -656,7 +678,9 @@
 
             <div class="logo">GO88<span><i id="admin-star" class="admin-trigger" onclick="toggleAdmin()">⭐</i> 30/4</span></div>
 
-            <div class="user-id">ID: 868686</div>
+            <div class="user-id">ID: 
+
+                868686</div>
 
         </div>
 
@@ -714,7 +738,9 @@
 
             </div>
 
-            <div class="game-card" style="grid-column: span 2;" onclick="openGame('baccarat')">
+            <div class="game-card" style="grid-column: span 2;"
+
+                onclick="openGame('baccarat')">
 
                 <div class="game-hot">x8 HÒA</div><div class="game-icon">🃏</div><div class="game-name">BACCARAT HOÀNG GIA</div>
 
@@ -740,7 +766,9 @@
 
             </div>
 
-            <div class="game-card" style="grid-column: span 2;" onclick="openGame('singularity')">
+            <div class="game-card" style="grid-column: span 2;"
+
+                onclick="openGame('singularity')">
 
                 <div class="game-icon">🌌</div><div class="game-name">LÕI HƯ KHÔNG</div>
 
@@ -768,9 +796,13 @@
 
         <div class="game-header">
 
-            <button class="btn-back" onclick="closeGame()">&lt; LOBBY</button>
+            <button class="btn-back" onclick="closeGame()">&lt;
 
-            <div style="font-weight: 900; color: var(--gold-mid);" id="game-title">TÊN GAME</div>
+                LOBBY</button>
+
+            <div style="font-weight: 900; color: var(--gold-mid);"
+
+                id="game-title">TÊN GAME</div>
 
             <div style="font-family: 'Share Tech Mono'; color: #aaa; font-size: 12px;">#<span id="game-id">0000</span></div>
 
@@ -822,17 +854,29 @@
 
                 <div class="radar-target" id="radar-target">DÒ...</div>
 
-                <div class="alpha-point" style="top: 10%; left: 50%; transform: translate(-50%, -50%);" id="alpha-1"></div>
+                <div class="alpha-point" style="top: 10%;
 
-                <div class="alpha-point" style="top: 25%; left: 85%; transform: translate(-50%, -50%);" id="alpha-2"></div>
+                    left: 50%; transform: translate(-50%, -50%);" id="alpha-1"></div>
 
-                <div class="alpha-point" style="top: 75%; left: 85%; transform: translate(-50%, -50%);" id="alpha-3"></div>
+                <div class="alpha-point" style="top: 25%;
 
-                <div class="alpha-point" style="top: 90%; left: 50%; transform: translate(-50%, -50%);" id="alpha-4"></div>
+                    left: 85%; transform: translate(-50%, -50%);" id="alpha-2"></div>
 
-                <div class="alpha-point" style="top: 75%; left: 15%; transform: translate(-50%, -50%);" id="alpha-5"></div>
+                <div class="alpha-point" style="top: 75%;
 
-                <div class="alpha-point" style="top: 25%; left: 15%; transform: translate(-50%, -50%);" id="alpha-6"></div>
+                    left: 85%; transform: translate(-50%, -50%);" id="alpha-3"></div>
+
+                <div class="alpha-point" style="top: 90%;
+
+                    left: 50%; transform: translate(-50%, -50%);" id="alpha-4"></div>
+
+                <div class="alpha-point" style="top: 75%;
+
+                    left: 15%; transform: translate(-50%, -50%);" id="alpha-5"></div>
+
+                <div class="alpha-point" style="top: 25%;
+
+                    left: 15%; transform: translate(-50%, -50%);" id="alpha-6"></div>
 
             </div>
 
@@ -884,17 +928,11 @@
 
             <div class="bet-grid">
 
-                <button class="bet-btn" onclick="addBet(10000)">+10K</button>
+                <button class="bet-btn" onclick="addBet(10000)">+10K</button><button class="bet-btn" 
 
-                <button class="bet-btn" onclick="addBet(50000)">+50K</button>
+                    onclick="addBet(50000)">+50K</button><button class="bet-btn" onclick="addBet(100000)">+100K</button>
 
-                <button class="bet-btn" onclick="addBet(100000)">+100K</button>
-
-                <button class="bet-btn" onclick="addBet(500000)">+500K</button>
-
-                <button class="bet-btn" onclick="addBet(1000000)">+1M</button>
-
-                <button class="bet-btn" onclick="addBet(5000000)">+5M</button>
+                <button class="bet-btn" onclick="addBet(500000)">+500K</button><button class="bet-btn" onclick="addBet(1000000)">+1M</button><button class="bet-btn" onclick="addBet(5000000)">+5M</button>
 
             </div>
 
@@ -902,9 +940,13 @@
 
             <div class="action-row">
 
-                <div style="display: flex; align-items: center; gap: 10px;">
+                <div style="display: flex;
 
-                    <button class="bet-btn" style="background: var(--danger); border: none;" onclick="clearBet()">HỦY</button>
+                    align-items: center; gap: 10px;">
+
+                    <button class="bet-btn" style="background: var(--danger);
+
+                        border: none;" onclick="clearBet()">HỦY</button>
 
                     <div class="cur-bet" id="cur-bet-txt">0</div>
 
@@ -923,74 +965,6 @@
 
 
 <script>
-
-    // --- DI CHUYỂN NÚT CHỨNG CHỈ PAGCOR ---
-
-    const certBadge = document.getElementById('cert-badge-img');
-
-    let isDraggingCert = false;
-
-    let certOffsetX, certOffsetY;
-
-
-
-    certBadge.addEventListener('mousedown', function(e) {
-
-        isDraggingCert = true;
-
-        certOffsetX = e.clientX - certBadge.getBoundingClientRect().left;
-
-        certOffsetY = e.clientY - certBadge.getBoundingClientRect().top;
-
-    });
-
-    document.addEventListener('mousemove', function(e) {
-
-        if (!isDraggingCert) return;
-
-        certBadge.style.left = (e.clientX - certOffsetX) + 'px';
-
-        certBadge.style.top = (e.clientY - certOffsetY) + 'px';
-
-        certBadge.style.right = 'auto'; 
-
-    });
-
-    document.addEventListener('mouseup', function() { isDraggingCert = false; });
-
-
-
-    // Hỗ trợ cảm ứng trên điện thoại
-
-    certBadge.addEventListener('touchstart', function(e) {
-
-        isDraggingCert = true;
-
-        let touch = e.touches[0];
-
-        certOffsetX = touch.clientX - certBadge.getBoundingClientRect().left;
-
-        certOffsetY = touch.clientY - certBadge.getBoundingClientRect().top;
-
-    }, {passive: false});
-
-    document.addEventListener('touchmove', function(e) {
-
-        if (!isDraggingCert) return;
-
-        let touch = e.touches[0];
-
-        certBadge.style.left = (touch.clientX - certOffsetX) + 'px';
-
-        certBadge.style.top = (touch.clientY - certOffsetY) + 'px';
-
-    }, {passive: false});
-
-    document.addEventListener('touchend', function() { isDraggingCert = false; });
-
-
-
-    // --- HIỆU ỨNG NỀN MATRIX ---
 
     const canvas = document.getElementById('matrix-canvas');
 
@@ -1036,7 +1010,9 @@
 
                 <input id="cl-id" type="number" class="swal2-input dark-input" placeholder="Nhập ID người nhận...">
 
-                <input id="cl-amt" type="number" class="swal2-input dark-input" placeholder="Số tiền chuyển...">
+                <input id="cl-amt" type="number" 
+
+                    class="swal2-input dark-input" placeholder="Số tiền chuyển...">
 
             `,
 
@@ -1122,7 +1098,9 @@
 
             `,
 
-            confirmButtonText: 'KẾT NỐI NGAY', background: '#1a0000', color: '#ffcc00'
+            confirmButtonText: 'KẾT NỐI NGAY', background: '#1a0000', color: 
+
+                '#ffcc00'
 
         });
 
@@ -1142,7 +1120,9 @@
 
             confirmButtonText: 'TẠO MÃ QR NẠP', background: '#1a0000', color: '#ffcc00', confirmButtonColor: '#00e676'
 
-        }).then((result) => {
+        }).then((result) 
+
+            => {
 
             if(result.isConfirmed) {
 
@@ -1152,7 +1132,9 @@
 
                 
 
-                let timer = 60;
+                let timer = 
+
+                    60;
 
                 Swal.fire({
 
@@ -1166,9 +1148,13 @@
 
                         </div>
 
-                        <div style="color:white; font-size:14px; margin-bottom:10px;">Nội dung: <b style="color:#00e676">NAP 868686</b></div>
+                        <div style="color:white;
 
-                        <p>Đang chờ thanh toán... <span id="qr-timer" style="color:var(--danger); font-weight:bold; font-size:18px;">60</span>s</p>
+                            font-size:14px; margin-bottom:10px;">Nội dung: <b style="color:#00e676">NAP 868686</b></div>
+
+                        <p>Đang chờ thanh toán... <span id="qr-timer" style="color:var(--danger);
+
+                            font-weight:bold; font-size:18px;">60</span>s</p>
 
                     `,
 
@@ -1176,7 +1162,9 @@
 
                     didOpen: () => {
 
-                        let intv = setInterval(() => {
+                        let intv = setInterval(() => 
+
+                            {
 
                             timer--;
 
@@ -1188,7 +1176,9 @@
 
                                 clearInterval(intv); balance += amt; updateUI();
 
-                                Swal.fire({title:'Thành công', text:`Đã nạp ${amt.toLocaleString()}đ vào tài khoản!`, icon:'success', background: '#1a0000', color: '#ffcc00'});
+                                Swal.fire({title:'Thành công', text:`Đã nạp ${amt.toLocaleString()}đ vào tài khoản!`, icon:'success', background: '#1a0000', 
+
+                                    color: '#ffcc00'});
 
                             }
 
@@ -1216,7 +1206,9 @@
 
                 <input id="r-name" type="text" class="swal2-input dark-input" placeholder="Tên chủ thẻ (Viết hoa không dấu)">
 
-                <input id="r-bank" type="text" class="swal2-input dark-input" placeholder="Ngân hàng (VD: MBBANK)">
+                <input 
+
+                    id="r-bank" type="text" class="swal2-input dark-input" placeholder="Ngân hàng (VD: MBBANK)">
 
                 <input id="r-stk" type="number" class="swal2-input dark-input" placeholder="Số tài khoản">
 
@@ -1238,11 +1230,13 @@
 
                 setTimeout(() => {
 
-                    let isSuccess = Math.random() <= 0.85; 
+                    let isSuccess = Math.random() <= 0.85; // Tỉ lệ 85% thành công
 
                     if(isSuccess) { balance -= amt; updateUI(); Swal.fire({title:'Rút Thành Công', text:`Đã chuyển ${amt.toLocaleString()}đ về tài khoản!`, icon:'success', background: '#1a0000', color: '#ffcc00'}); } 
 
-                    else { Swal.fire({title:'Thất Bại', text:'Giao dịch bị từ chối bởi Ngân hàng. Vui lòng liên hệ CSKH.', icon:'error', background: '#1a0000', color: '#ffcc00'}); }
+                    else { Swal.fire({title:'Thất Bại', text:'Giao dịch 
+
+                        bị từ chối bởi Ngân hàng. Vui lòng liên hệ CSKH.', icon:'error', background: '#1a0000', color: '#ffcc00'}); }
 
                 }, 2500);
 
@@ -1270,13 +1264,21 @@
 
         if(adminClickCount === 1) ADMIN_WIN_RATE = 60; else if(adminClickCount === 2) ADMIN_WIN_RATE = 70;
 
-        else if(adminClickCount === 3) ADMIN_WIN_RATE = 80; else if(adminClickCount === 4) ADMIN_WIN_RATE = 90;
+        else if(adminClickCount === 3) ADMIN_WIN_RATE = 80;
 
-        else if(adminClickCount === 5) { ADMIN_WIN_RATE = 100; document.getElementById('admin-star').classList.add('active'); }
+        else if(adminClickCount === 4) ADMIN_WIN_RATE = 90;
 
-        else { ADMIN_WIN_RATE = 50; adminClickCount = 0; document.getElementById('admin-star').classList.remove('active'); }
+        else if(adminClickCount === 5) { ADMIN_WIN_RATE = 100; document.getElementById('admin-star').classList.add('active');
 
-        let b = document.getElementById('balance'); b.style.color = 'var(--danger)'; b.style.textShadow = '0 0 10px var(--danger)';
+        }
+
+        else { ADMIN_WIN_RATE = 50; adminClickCount = 0; document.getElementById('admin-star').classList.remove('active');
+
+        }
+
+        let b = document.getElementById('balance'); b.style.color = 'var(--danger)';
+
+        b.style.textShadow = '0 0 10px var(--danger)';
 
         setTimeout(() => { b.style.color = 'var(--gold-light)'; b.style.textShadow = 'none'; }, 200);
 
@@ -1288,11 +1290,15 @@
 
 
 
-    let currentGame = null; let currentBetAmt = 0; let selectedSide = null; let totalBetPlaced = 0; let sidePlaced = null;
+    let currentGame = null;
 
-    let timer = 30; let gameInterval; let isRevealing = false; let resultCache = null; let isSystemWin = false;
+    let currentBetAmt = 0; let selectedSide = null; let totalBetPlaced = 0; let sidePlaced = null;
 
+    let timer = 30;
 
+    let gameInterval; let isRevealing = false; let resultCache = null; let isSystemWin = false;
+
+    
 
     // --- NẶN BÁT 360 ĐỘ ---
 
@@ -1300,13 +1306,15 @@
 
     let isDragging = false, startX, startY, currentX = 0, currentY = 0;
 
-
-
     function dragStart(e) { 
 
         if(!isRevealing || currentGame==='baccarat' || !resultCache) return; 
 
-        e.preventDefault(); isDragging = true; cupEl.classList.add('dragging');
+        e.preventDefault();
+
+        isDragging = true; 
+
+        cupEl.classList.add('dragging');
 
         startX = e.type.includes('mouse') ? e.clientX : e.touches[0].clientX; 
 
@@ -1324,17 +1332,43 @@
 
         currentX = clientX - startX; currentY = clientY - startY;
 
+        // Tính toán tọa độ 360 độ từ tâm (-50%)
+
         cupEl.style.transform = `translate(calc(-50% + ${currentX}px), ${currentY}px)`;
 
         let dist = Math.sqrt(currentX*currentX + currentY*currentY);
 
-        if(dist > 120) { isDragging = false; cupEl.classList.remove('dragging'); forceOpen(); } 
+        if(dist > 120) { 
+
+            isDragging = false;
+
+            cupEl.classList.remove('dragging');
+
+            forceOpen(); 
+
+        } 
 
     }
 
-    function dragEnd() { isDragging = false; cupEl.classList.remove('dragging'); }
+    function dragEnd() { 
 
-    function resetCup() { currentX = 0; currentY = 0; cupEl.style.transform = `translate(-50%, 0)`; cupEl.style.opacity = '1'; }
+        isDragging = false;
+
+        cupEl.classList.remove('dragging');
+
+    }
+
+    function resetCup() { 
+
+        currentX = 0;
+
+        currentY = 0; 
+
+        cupEl.style.transform = `translate(-50%, 0)`; 
+
+        cupEl.style.opacity = '1'; 
+
+    }
 
 
 
@@ -1344,11 +1378,17 @@
 
     document.addEventListener('touchend', dragEnd); document.addEventListener('mouseup', dragEnd);
 
+    
 
+    function generateMD5() { return Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15) + "a8f";
 
-    function generateMD5() { return Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15) + "a8f"; }
+    }
 
     const bauCuaIcons = {'NAI':'🦌', 'BẦU':'🥒', 'GÀ':'🐓', 'CÁ':'🐟', 'CUA':'🦀', 'TÔM':'🦐'};
+
+    
+
+    // HÀM TẠO SÚC XẮC 3D
 
     const getDice = (n) => {
 
@@ -1372,19 +1412,15 @@
 
 
 
-    // ----- KHÚC CODE ĐƯỢC PHỤC HỒI / VÁ LỖI TỪ ĐÂY -----
-
-
-
     function openGame(g) {
 
         clearInterval(gameInterval);
 
         currentGame = g; isRevealing = false;
 
-        timer = (g==='crash' || g==='singularity') ? 10 : 30; 
+        timer = (g==='crash' || g==='singularity') ? 10 : 30; clearBet(); totalBetPlaced = 0;
 
-        clearBet(); totalBetPlaced = 0; resultCache = null;
+        resultCache = null;
 
         
 
@@ -1392,27 +1428,13 @@
 
         document.getElementById('baccarat-container').style.display = 'none';
 
-        document.getElementById('nanbat-container').style.display = 'none'; 
+        document.getElementById('nanbat-container').style.display = 'none'; document.getElementById('crash-container').style.display = 'none'; document.getElementById('radar-container').style.display = 'none'; document.getElementById('singularity-container').style.display = 'none';
 
-        document.getElementById('crash-container').style.display = 'none'; 
+        document.getElementById('gooey-wrapper').style.display = 'none'; document.getElementById('chromeorb-container').style.display = 'none';
 
-        document.getElementById('radar-container').style.display = 'none'; 
-
-        document.getElementById('singularity-container').style.display = 'none';
-
-        document.getElementById('gooey-wrapper').style.display = 'none'; 
-
-        document.getElementById('chromeorb-container').style.display = 'none';
-
-        document.getElementById('orb-text-container').style.display = 'none'; 
-
-        document.getElementById('btn-force-open').style.display = 'none'; 
-
-        document.getElementById('md5-display').style.display = 'none';
+        document.getElementById('orb-text-container').style.display = 'none'; document.getElementById('btn-force-open').style.display = 'none'; document.getElementById('md5-display').style.display = 'none';
 
         document.getElementById('btn-confirm').innerText = "PHÁT LỆNH";
-
-
 
         const titles = {'taixiu':'TÀI XỈU 3D', 'xocdia':'XÓC ĐĨA', 'baucua':'BẦU CUA', 'baccarat':'BACCARAT', 'crash':'TÊN LỬA CRASH', 'radar':'RADAR QUÉT ĐIỂM ALPHA', 'singularity':'HƯ KHÔNG', 'chromeorb':'THỦY NGÂN'};
 
@@ -1430,360 +1452,16 @@
 
             document.getElementById('nanbat-container').style.display = 'block';
 
-            resetCup(); 
+            resetCup(); document.getElementById('dia-inner').innerHTML = '';
 
-            document.getElementById('dia-inner').innerHTML = '';
-
-            if(g==='taixiu') { 
-
-                document.getElementById('md5-display').style.display = 'block'; 
-
-                document.getElementById('md5-hash').innerText = generateMD5();
+            if(g==='taixiu') { document.getElementById('md5-display').style.display = 'block'; document.getElementById('md5-hash').innerText = generateMD5();
 
             }
 
         }
 
-        else if(g==='baccarat') { 
+        else if(g==='baccarat') { document.getElementById('baccarat-container').style.display = 'flex';
 
-            document.getElementById('baccarat-container').style.display = 'flex';
+            document.getElementById('bac-cards-con').innerHTML=''; document.getElementById('bac-cards-cai').innerHTML
 
-            document.getElementById('bac-cards-con').innerHTML = ''; 
-
-            document.getElementById('bac-cards-cai').innerHTML = '';
-
-            document.getElementById('bac-score-con').innerText = '0';
-
-            document.getElementById('bac-score-cai').innerText = '0';
-
-        }
-
-        else if (g === 'crash') {
-
-            document.getElementById('crash-container').style.display = 'flex';
-
-            document.getElementById('crash-mult').innerText = '1.00x';
-
-            document.getElementById('crash-mult').style.color = 'var(--success)';
-
-        } 
-
-        else if (g === 'radar') {
-
-            document.getElementById('radar-container').style.display = 'block';
-
-            document.querySelectorAll('.alpha-point').forEach(p => p.classList.remove('active'));
-
-        } 
-
-        else if (g === 'singularity') {
-
-            document.getElementById('singularity-container').style.display = 'block';
-
-            document.getElementById('sing-core').innerText = 'CORE';
-
-        } 
-
-        else if (g === 'chromeorb') {
-
-            document.getElementById('gooey-wrapper').style.display = 'flex';
-
-            document.getElementById('chromeorb-container').style.display = 'block';
-
-        }
-
-
-
-        updateGameStatus();
-
-        gameInterval = setInterval(gameTick, 1000);
-
-    }
-
-
-
-    function setupSideGrid(g) {
-
-        const grid = document.getElementById('side-grid');
-
-        grid.innerHTML = '';
-
-        let sides = [];
-
-        if(g === 'taixiu') sides = ['TÀI', 'XỈU'];
-
-        else if(g === 'xocdia') sides = ['CHẴN', 'LẺ'];
-
-        else if(g === 'baucua') sides = ['BẦU', 'CUA', 'TÔM', 'CÁ', 'GÀ', 'NAI'];
-
-        else if(g === 'baccarat') sides = ['CON', 'CÁI', 'HÒA'];
-
-        else sides = ['CƯỢC NGAY'];
-
-
-
-        sides.forEach(s => {
-
-            let btn = document.createElement('button');
-
-            btn.className = 'side-btn';
-
-            btn.innerText = s;
-
-            btn.onclick = () => selectSide(s, btn);
-
-            grid.appendChild(btn);
-
-        });
-
-        selectedSide = null;
-
-    }
-
-
-
-    function selectSide(side, btnEl) {
-
-        if(isRevealing) return;
-
-        document.querySelectorAll('.side-btn').forEach(b => b.classList.remove('active'));
-
-        btnEl.classList.add('active');
-
-        selectedSide = side;
-
-    }
-
-
-
-    function addBet(amt) {
-
-        if(isRevealing) return;
-
-        currentBetAmt += amt;
-
-        document.getElementById('cur-bet-txt').innerText = currentBetAmt.toLocaleString();
-
-    }
-
-
-
-    function clearBet() {
-
-        if(isRevealing) return;
-
-        currentBetAmt = 0;
-
-        document.getElementById('cur-bet-txt').innerText = '0';
-
-    }
-
-
-
-    function confirmBet() {
-
-        if(isRevealing) return Swal.fire({title:'Lỗi', text:'Đã hết thời gian cược!', icon:'error', background: '#1a0000', color: '#ffcc00'});
-
-        if(currentBetAmt <= 0) return Swal.fire({title:'Lỗi', text:'Vui lòng chọn mức cược', icon:'error', background: '#1a0000', color: '#ffcc00'});
-
-        if(!selectedSide) return Swal.fire({title:'Lỗi', text:'Vui lòng chọn cửa cược', icon:'error', background: '#1a0000', color: '#ffcc00'});
-
-        if(currentBetAmt > balance) return Swal.fire({title:'Lỗi', text:'Số dư không đủ', icon:'error', background: '#1a0000', color: '#ffcc00'});
-
-
-
-        balance -= currentBetAmt; updateUI();
-
-        totalBetPlaced = currentBetAmt;
-
-        sidePlaced = selectedSide;
-
-        clearBet();
-
-        Swal.fire({title:'Thành công', text:`Đã cược ${totalBetPlaced.toLocaleString()}đ vào ${sidePlaced}`, icon:'success', timer: 1000, showConfirmButton: false, background: '#1a0000', color: '#ffcc00'});
-
-    }
-
-
-
-    function gameTick() {
-
-        if(isRevealing) return;
-
-        timer--;
-
-        updateGameStatus();
-
-        if(timer <= 0) { startReveal(); }
-
-    }
-
-
-
-    function updateGameStatus() {
-
-        let statusEl = document.getElementById('game-status');
-
-        if(!isRevealing) {
-
-            statusEl.innerText = `> THỜI GIAN CƯỢC: ${timer}s`;
-
-            statusEl.style.color = 'var(--gold-light)';
-
-        } else {
-
-            statusEl.innerText = '> ĐANG MỞ KẾT QUẢ...';
-
-            statusEl.style.color = 'var(--danger)';
-
-        }
-
-    }
-
-
-
-    function forceOpen() {
-
-        if(!isRevealing && timer > 0) { timer = 0; startReveal(); }
-
-        else if (isRevealing && resultCache) { cupEl.style.opacity = '0'; }
-
-    }
-
-
-
-    function closeGame() {
-
-        clearInterval(gameInterval);
-
-        document.getElementById('game-screen').classList.remove('active');
-
-        clearBet();
-
-    }
-
-
-
-    function startReveal() {
-
-        isRevealing = true;
-
-        updateGameStatus();
-
-        document.getElementById('btn-force-open').style.display = 'block';
-
-        
-
-        setTimeout(() => { generateResult(); }, 1500);
-
-    }
-
-
-
-    function generateResult() {
-
-        document.getElementById('btn-force-open').style.display = 'none';
-
-        let win = false;
-
-        
-
-        if(currentGame === 'taixiu') {
-
-            let d1 = Math.floor(Math.random() * 6) + 1;
-
-            let d2 = Math.floor(Math.random() * 6) + 1;
-
-            let d3 = Math.floor(Math.random() * 6) + 1;
-
-            let sum = d1 + d2 + d3;
-
-            let resSide = sum >= 11 ? 'TÀI' : 'XỈU';
-
-            document.getElementById('dia-inner').innerHTML = getDice(d1) + getDice(d2) + getDice(d3);
-
-            if(sidePlaced === resSide) win = true;
-
-            resultCache = true;
-
-            cupEl.style.opacity = '0'; 
-
-        }
-
-        else if(currentGame === 'xocdia') {
-
-             let reds = Math.floor(Math.random() * 5);
-
-             let resSide = (reds % 2 === 0) ? 'CHẴN' : 'LẺ';
-
-             let html = '';
-
-             for(let i=0; i<4; i++) {
-
-                 html += `<div class="dice-result" style="border-radius:50%; background:${i<reds?'red':'white'}"></div>`;
-
-             }
-
-             document.getElementById('dia-inner').innerHTML = html;
-
-             if(sidePlaced === resSide) win = true;
-
-             resultCache = true;
-
-             cupEl.style.opacity = '0';
-
-        }
-
-        else {
-
-             // Mock chung cho các game khác để đảm bảo chức năng chạy 100%
-
-             win = Math.random() < (ADMIN_WIN_RATE / 100);
-
-             if(currentGame === 'crash') document.getElementById('crash-mult').innerText = (Math.random()*10).toFixed(2) + 'x';
-
-        }
-
-
-
-        if(totalBetPlaced > 0) {
-
-            setTimeout(() => {
-
-                if(win) {
-
-                    let winAmt = totalBetPlaced * 2;
-
-                    balance += winAmt;
-
-                    Swal.fire({title:'THẮNG LỚN', text:`Bạn nhận được ${winAmt.toLocaleString()}đ`, icon:'success', background: '#1a0000', color: '#ffcc00'});
-
-                } else {
-
-                    Swal.fire({title:'THUA CƯỢC', text:`Chúc bạn may mắn lần sau!`, icon:'error', background: '#1a0000', color: '#ffcc00'});
-
-                }
-
-                updateUI();
-
-                totalBetPlaced = 0;
-
-                sidePlaced = null;
-
-            }, 1000);
-
-        }
-
-
-
-        setTimeout(() => { openGame(currentGame); }, 4000);
-
-    }
-
-</script>
-
-</body>
-
-</html>
-
-Đang hiển thị 7603079251756775194.
+Đang hiển thị 2019772776646202220.
