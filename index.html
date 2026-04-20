@@ -125,7 +125,7 @@
             left: 50%; transform: translateX(-50%); font-family: 'Share Tech Mono'; color: var(--gold-light); font-size: 14px; text-shadow: 0 0 5px var(--gold-mid); z-index: 5;
             text-align: center; width: 100%; }
         
-        .md5-text { font-family: 'Share Tech Mono';
+        .sha-text { font-family: 'Share Tech Mono';
             color: #00ffff; font-size: 11px; margin-top: 5px; opacity: 0.8; }
 
         .nanbat-container { position: relative;
@@ -417,9 +417,9 @@ id="game-title">TÊN GAME</div>
         
         <div class="display-area" id="display-area">
             <div class="status-text" id="game-status">> SẴN SÀNG</div>
-            <div id="md5-display" style="display: none; position: absolute; top: 30px; left: 50%; transform: translateX(-50%); text-align:center; z-index: 5;">
-                <span style="color:#aaa; font-size:10px;">Chuỗi MD5:</span><br>
-                <span class="md5-text" id="md5-hash"></span>
+            <div id="sha-display" style="display: none; position: absolute; top: 30px; left: 50%; transform: translateX(-50%); text-align:center; z-index: 5;">
+                <span style="color:#aaa; font-size:10px;">Chuỗi SHA:</span><br>
+                <span class="sha-text" id="sha-hash"></span>
             </div>
             
             <div class="baccarat-container" id="baccarat-container">
@@ -696,7 +696,7 @@ font-weight:bold; font-size:18px;">60</span>s</p>
     document.addEventListener('touchmove', drag, {passive: false}); document.addEventListener('mousemove', drag);
     document.addEventListener('touchend', dragEnd); document.addEventListener('mouseup', dragEnd);
     
-    function generateMD5() { return Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15) + "a8f";
+    function generateSHA() { return Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15) + "a8f";
     }
     const bauCuaIcons = {'NAI':'🦌', 'BẦU':'🥒', 'GÀ':'🐓', 'CÁ':'🐟', 'CUA':'🦀', 'TÔM':'🦐'};
     
@@ -722,7 +722,7 @@ font-weight:bold; font-size:18px;">60</span>s</p>
         document.getElementById('baccarat-container').style.display = 'none';
         document.getElementById('nanbat-container').style.display = 'none'; document.getElementById('crash-container').style.display = 'none'; document.getElementById('radar-container').style.display = 'none'; document.getElementById('singularity-container').style.display = 'none';
         document.getElementById('gooey-wrapper').style.display = 'none'; document.getElementById('chromeorb-container').style.display = 'none';
-        document.getElementById('orb-text-container').style.display = 'none'; document.getElementById('btn-force-open').style.display = 'none'; document.getElementById('md5-display').style.display = 'none';
+        document.getElementById('orb-text-container').style.display = 'none'; document.getElementById('btn-force-open').style.display = 'none'; document.getElementById('sha-display').style.display = 'none';
         document.getElementById('btn-confirm').innerText = "PHÁT LỆNH";
         const titles = {'taixiu':'TÀI XỈU 3D', 'xocdia':'XÓC ĐĨA', 'baucua':'BẦU CUA', 'baccarat':'BACCARAT', 'crash':'TÊN LỬA CRASH', 'radar':'RADAR QUÉT ĐIỂM ALPHA', 'singularity':'HƯ KHÔNG', 'chromeorb':'THỦY NGÂN'};
         document.getElementById('game-title').innerText = titles[g];
@@ -733,7 +733,7 @@ font-weight:bold; font-size:18px;">60</span>s</p>
         if(g==='taixiu'||g==='xocdia'||g==='baucua') { 
             document.getElementById('nanbat-container').style.display = 'block';
             resetCup(); document.getElementById('dia-inner').innerHTML = '';
-            if(g==='taixiu') { document.getElementById('md5-display').style.display = 'block'; document.getElementById('md5-hash').innerText = generateMD5();
+            if(g==='taixiu') { document.getElementById('sha-display').style.display = 'block'; document.getElementById('sha-hash').innerText = generateSHA();
             }
         }
         else if(g==='baccarat') { document.getElementById('baccarat-container').style.display = 'flex';
