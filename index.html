@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>CHIẾN DỊCH 30/4 - GO88VTV</title>
+    <title>CHIẾN DỊCH 30/4 - VŨ TRỤ SỐ TỔNG HỢP</title>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
     <style>
@@ -202,7 +202,7 @@
 
     <div class="header">
         <div class="top-row">
-            <div class="logo">GO88<span><i id="admin-star" class="admin-trigger" onclick="toggleAdmin()">⭐</i> VTV</span></div>
+            <div class="logo">VŨ TRỤ SỐ<span><i id="admin-star" class="admin-trigger" onclick="toggleAdmin()">⭐</i> LÕI</span></div>
             <div class="user-id">ID: 868686</div>
         </div>
         <div class="bot-row">
@@ -825,7 +825,7 @@
         totalBetPlaced = 0; setTimeout(() => openGame(currentGame), 2000);
     }
 
-  // CHỨNG CHỈ DRAG
+    // CHỨNG CHỈ DRAG
     const certBadge = document.getElementById('cert-badge'); let isDraggingCert = false, certStartX, certStartY, certInitialLeft, certInitialTop, hasDraggedCert = false;
     function dragStartCert(e) { isDraggingCert = true; hasDraggedCert = false; certStartX = e.type.includes('mouse') ? e.clientX : e.touches[0].clientX; certStartY = e.type.includes('mouse') ? e.clientY : e.touches[0].clientY; const rect = certBadge.getBoundingClientRect(); certInitialLeft = rect.left; certInitialTop = rect.top; certBadge.style.transition = 'none'; }
     function dragCert(e) { if (!isDraggingCert) return; e.preventDefault(); let clientX = e.type.includes('mouse') ? e.clientX : e.touches[0].clientX; let clientY = e.type.includes('mouse') ? e.clientY : e.touches[0].clientY; let dx = clientX - certStartX; let dy = clientY - certStartY; if (Math.abs(dx) > 5 || Math.abs(dy) > 5) hasDraggedCert = true; certBadge.style.left = `${certInitialLeft + dx}px`; certBadge.style.top = `${certInitialTop + dy}px`; }
