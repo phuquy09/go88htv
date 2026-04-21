@@ -825,88 +825,15 @@
         totalBetPlaced = 0; setTimeout(() => openGame(currentGame), 2000);
     }
 
-    // CHỨNG CHỈ DRAG
-    // --- DRAG LOGIC CHO LOGO CHỨNG CHỈ ---
-
-    const certBadge = document.getElementById('cert-badge');
-
-    let isDraggingCert = false;
-
-    let certStartX, certStartY, certInitialLeft, certInitialTop;
-
-    let hasDraggedCert = false;
-
-
-
-    function dragStartCert(e) {
-
-        isDraggingCert = true;
-
-        hasDraggedCert = false;
-
-        certStartX = e.type.includes('mouse') ? e.clientX : e.touches[0].clientX;
-
-        certStartY = e.type.includes('mouse') ? e.clientY : e.touches[0].clientY;
-
-
-
-        const rect = certBadge.getBoundingClientRect();
-
-        certInitialLeft = rect.left;
-
-        certInitialTop = rect.top;
-
-
-
-        certBadge.style.transition = 'none';
-
-    }
-
-
-
-    function dragCert(e) {
-
-        if (!isDraggingCert) return;
-
-        e.preventDefault(); 
-
-
-
-        let clientX = e.type.includes('mouse') ? e.clientX : e.touches[0].clientX;
-
-        let clientY = e.type.includes('mouse') ? e.clientY : e.touches[0].clientY;
-
-
-
-        let dx = clientX - certStartX;
-
-        let dy = clientY - certStartY;
-
-
-
-        if (Math.abs(dx) > 5 || Math.abs(dy) > 5) {
-
-            hasDraggedCert = true; 
-
-        }
-
-
-
-        certBadge.style.left = `${certInitialLeft + dx}px`;
-
-        certBadge.style.top = `${certInitialTop + dy}px`;
-
-    }
-
-
-
-    function dragEndCert(e) {
-
-        if (!isDraggingCert) return;
-
-        isDraggingCert = false;
-
-        certBadge.style.transition = 'transform 0.1s';
+  // CHỨNG CHỈ DRAG
+    const certBadge = document.getElementById('cert-badge'); let isDraggingCert = false, certStartX, certStartY, certInitialLeft, certInitialTop, hasDraggedCert = false;
+    function dragStartCert(e) { isDraggingCert = true; hasDraggedCert = false; certStartX = e.type.includes('mouse') ? e.clientX : e.touches[0].clientX; certStartY = e.type.includes('mouse') ? e.clientY : e.touches[0].clientY; const rect = certBadge.getBoundingClientRect(); certInitialLeft = rect.left; certInitialTop = rect.top; certBadge.style.transition = 'none'; }
+    function dragCert(e) { if (!isDraggingCert) return; e.preventDefault(); let clientX = e.type.includes('mouse') ? e.clientX : e.touches[0].clientX; let clientY = e.type.includes('mouse') ? e.clientY : e.touches[0].clientY; let dx = clientX - certStartX; let dy = clientY - certStartY; if (Math.abs(dx) > 5 || Math.abs(dy) > 5) hasDraggedCert = true; certBadge.style.left = `${certInitialLeft + dx}px`; certBadge.style.top = `${certInitialTop + dy}px`; }
+    function dragEndCert(e) { if (!isDraggingCert) return; isDraggingCert = false; certBadge.style.transition = 'transform 0.1s'; if (!hasDraggedCert) showCert(); }
+    function showCert() { Swal.fire({ title: 'CHỨNG CHỈ QUỐC TẾ', html: `<p style="color:#00e676; font-size:12px;">ĐANG GIÁM SÁT TRỰC TIẾP</p>`, background: '#1a0000', color: '#ffcc00' }); }
+    certBadge.addEventListener('mousedown', dragStartCert); certBadge.addEventListener('touchstart', dragStartCert, {passive: false});
+    document.addEventListener('mousemove', dragCert); document.addEventListener('touchmove', dragCert, {passive: false});
+    document.addEventListener('mouseup', dragEndCert); document.addEventListener('touchend', dragEndCert);
 </script>
 </body>
 </html>
